@@ -15,6 +15,7 @@ import { MatListModule } from '@angular/material/list';
 import { HomeComponent } from './home/home.component';
 import { ClgNavComponent } from './clg-nav/clg-nav.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { SheetComponent } from './sheet/sheet.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     AppNavComponent,
     HomeComponent,
     ClgNavComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    SheetComponent
   ],
   imports: [
     BrowserModule,
