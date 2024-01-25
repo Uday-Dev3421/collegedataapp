@@ -1,0 +1,23 @@
+
+<div class="container" style="margin-top: 20px;">
+    <br/>
+<table class="table table-hover">
+    <tr class="table-row">
+    <th>ID</th>
+    <th>Name</th>
+    <th>Gender</th>
+    <th>DOB</th>
+    <th>Course Fee</th>
+</tr>
+<tr *ngFor="let s of studentList" class="table-row" scope="row">
+    <td>{{s.ID}}</td>
+    <td>{{s.Name}}</td>
+    <td>{{s.Gender}}</td>
+    <td>{{s.DOB | date: "dd/MM/yyyy"}}</td>
+    <td>{{s.CourseFee | currency}}</td>
+</tr>
+<br/>
+
+
+</table>
+</div>

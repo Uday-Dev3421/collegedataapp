@@ -1,0 +1,21 @@
+
+<div class="item">
+
+<div>
+    <h2> Show :</h2> 
+    <table>
+        <tr>
+            
+        <td *ngFor="let option of filterOptions">
+            
+        {{option.Name}}({{option.Count}})
+        
+            <input type="radio" name="radioGroup" [checked]="option.Id===1" [value]="option.Id" (change)="onSelectionChange(option)">
+        </td>
+        </tr>
+    </table>
+
+</div>
+<clg-studentlist [studentList]="studentList" ></clg-studentlist>
+
+
