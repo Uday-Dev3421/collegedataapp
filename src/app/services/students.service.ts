@@ -6,6 +6,7 @@ import { Student } from '../student';
 })
 export class StudentsService {
 
+  fileData: any;
  studentList: Student[] =[
   {
     ID : "STD101",
@@ -61,5 +62,10 @@ export class StudentsService {
 
   getStudents(){
     return this.studentList;
+  }
+
+  saveStudents(fileData : any){
+    this.fileData = fileData;
+    return "File Data saved successfully";
   }
 }

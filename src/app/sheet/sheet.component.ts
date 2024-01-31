@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import * as XLSX from 'xlsx';
+import { StudentsService } from '../services/students.service';
 
 type AOA = any[][];
 
@@ -12,7 +13,11 @@ export class SheetComponent {
   data: AOA = [];
   wopts: XLSX.WritingOptions = { bookType: 'xlsx', type: 'array' };
   fileName: string = '';
-
+  message: string='';
+  
+  constructor(private studentService: StudentsService){
+    
+  }
   onFileChange(evt: any) {
     /* wire up file reader */
     const target: DataTransfer = <DataTransfer>(evt.target);
@@ -44,14 +49,9 @@ export class SheetComponent {
 
   saveData(): void {
     /* generate worksheet */
-    const ws: XLSX.WorkSheet = XLSX.utils.aoa_to_sheet(this.data);
-
-    /* generate workbook and add the worksheet */
-    const wb: XLSX.WorkBook = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
-
-    /* save to file */
-    XLSX.writeFile(wb, this.fileName);
+    const filedata: any = this.data;
+    this.message = this.studentService.saveStudents(filedata);
+    
   }
 
   
